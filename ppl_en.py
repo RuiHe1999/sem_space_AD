@@ -15,9 +15,10 @@ par2group = dict(zip(demo.PAR, demo.dx))
 
 # gpt model 
 from transformers import AutoTokenizer, AutoModelForCausalLM
-model_name = 'state-spaces/mamba-2.8b-hf'
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+model_name = "mistralai/Mistral-7B-Instruct-v0.1"
+huggingface_token = ''
+tokenizer = AutoTokenizer.from_pretrained(model_name, token=huggingface_token)
+model = AutoModelForCausalLM.from_pretrained(model_name, token=huggingface_token)
 model = model.to(device)
 
 # 3. functions
